@@ -125,7 +125,7 @@ async def main():
     for num, fname in enumerate(images):
         if args.resume > num:
             continue
-        if args.until_frame < num:
+        if args.until_frame and args.until_frame < num:
             break
         path = os.path.join(args.input_path, fname)
         _img = Image.open(path)
